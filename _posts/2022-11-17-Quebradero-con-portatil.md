@@ -6,12 +6,11 @@ header:
   teaser_home_page: true
 classes		: wide
 categories:
-  - Linux
-  - Windows
+  - Sistemas
 tags:  
   - Debian 11
   - Windows 11
-  - howto
+  - Howto
 ---
 
 ![](/assets/images/portatil/prev.png){: .align-center}

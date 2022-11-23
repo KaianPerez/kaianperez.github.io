@@ -6,7 +6,7 @@ header:
   teaser_home_page: true
 classes		: wide
 categories:
-  - Windows
+  - Sistemas
 tags:  
   - Windows 11
   - Howto
