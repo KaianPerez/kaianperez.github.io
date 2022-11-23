@@ -5,8 +5,12 @@ header:
   teaser: /assets/images/win/win.png
   teaser_home_page: true
 classes		: wide
-category    : [ Sistemas ]
-tags        : [ Windows ]
+categories:
+  - Windows
+tags:  
+  - Windows 11
+  - Howto
+  - Virtualbox
 ---
 
 ![](/assets/images/win/win.png){: .align-center}

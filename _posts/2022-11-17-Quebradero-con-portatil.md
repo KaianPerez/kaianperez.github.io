@@ -5,8 +5,13 @@ header:
   teaser: /assets/images/portatil/prev.png
   teaser_home_page: true
 classes		: wide
-category    : [ Sistemas ]
-tags        : [ Linux, Windows ]
+categories:
+  - Linux
+  - Windows
+tags:  
+  - Debian 11
+  - Windows 11
+  - howto
 ---
 
 ![](/assets/images/portatil/prev.png){: .align-center}
