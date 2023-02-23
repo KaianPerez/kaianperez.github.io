@@ -10,7 +10,7 @@ categories:
 tags:  
   - Kernel panic
   - Howto
-  - Debian
+  - Debian 11
   - Initramfs
 ---
 
