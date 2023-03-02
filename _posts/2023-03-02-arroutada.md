@@ -154,7 +154,7 @@ Bien, vamos a generar un "oneliner" para que nos los lea todos y podamos ver el 
 
 ~~~bash
 ❯ for x in {1..999}; do curl http://192.168.1.135/scout/j2/docs/z$x >> resultado; done 2>/dev/null
-                                                                                                                                                                                         
+
 ❯ cat resultado
 Ignore z*, please
 Jabatito
@@ -369,11 +369,11 @@ Vamos a por la flag de root, para ello, como hacemos siempre, vamos a mirar la l
 
 Somos root, pero la flag no es válida, si nos fijamos acaba en "==" lo que nos da a entender que está en **base64**. 
 
-Si la decodificamos con `echo "R3VXXXXXXXXXXXXXXXXXXXJWg==" | base64 -d` todavía sigue sin funcionar, falta algo más.
+Si la decodificamos con `echo "R3VXXXXXXXXXXXXXXXXXXXJWg==" | base64 -d` todavía sigue sin funcionar. Falta algo más...
 
-Para finalizar, habría que aplicarle un **ROT13**, quedando `echo "GunXXXXXXXXXXXXXXXlIZ" | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+Por tanto, habría que aplicarle un **ROT13**, quedando así: `echo "GunXXXXXXXXXXXXXXXlIZ" | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
 
-Ahora sí, tenemos la máquina completamente resuelta.
+Ahora sí, tenemos la flag funcional y la máquina completamente resuelta.
 
 Agradecer a Rijaba1 por esta máquina, la cual me ha parecido muy divertida y donde nos hace practicar con PHP, que viene muy bien. Nos vemos en la siguiente.
 
