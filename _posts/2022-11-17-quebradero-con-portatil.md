@@ -4,6 +4,7 @@ excerpt:      "Hoy comentaremos los quebraderos de cabeza que tuve con un portá
 header:
   teaser: /assets/images/portatil/prev.png
   teaser_home_page: true
+  icon: /assets/images/WIN.png
 classes		: wide
 categories:
   - Sistemas

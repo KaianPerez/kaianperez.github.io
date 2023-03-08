@@ -4,6 +4,7 @@ excerpt:    "Hace poco, decidí formatear porque llevaba años sin hacerlo y me 
 header:
   teaser: /assets/images/win/win.png
   teaser_home_page: true
+  icon: /assets/images/WIN.png
 classes		: wide
 categories:
   - Sistemas

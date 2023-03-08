@@ -4,6 +4,7 @@ excerpt:    "Hoy hablaremos de algunos problemitas relacionados con el arranque 
 header:
   teaser: /assets/images/kernelpanic/prev.png
   teaser_home_page: true
+  icon: /assets/images/TUX.png
 classes		: wide
 categories:
   - Sistemas
