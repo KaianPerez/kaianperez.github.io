@@ -80,3 +80,8 @@ Como ya tenía el sources.list actualizado, solamente era localizar el paquete q
 
 Así es como salvamos el portátil, con un buen Linux sin tanta tralla.
 
+
+<font color='green'>[Actualización julio 2023]</font>
+
+Para mejorar las prestaciones del mismo, decido formatearlo e instalar Linux Mint, el cual está pensado para ser muy fácil de usar al estilo Windows. Confirmo que ha sido todo un acierto, pues ya se actualiza solo, tiene su gestor de programas y reconoce todos los drivers de forma automática.
+
