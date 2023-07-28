@@ -1,6 +1,6 @@
 ---
 title:      "Principle"
-excerpt:    "Comenzamos julio con nuestra primera máquina creada para la comunidad. En ella veremos las típicas técnicas y un port forwarding, para terminar con una escalada con un python library hijacking."
+excerpt:    "Resolvemos nuestra primera máquina creada para la comunidad. En ella veremos las típicas técnicas y un port forwarding, para terminar con una escalada con un python library hijacking."
 toc:        true
 toc_label:  "Tabla de contenidos"
 toc_icon:   "key"
@@ -23,7 +23,7 @@ tags:
 
 ![](/assets/images/principle/prev.png){: .align-center}
 
-Comenzamos julio con nuestra primera máquina creada para la comunidad. Es un homenaje a uno de los mejores videojuegos de puzles que se han creado, The Talos of Principle, que además cuenta con una historia impresionante y temas filosóficos. En ella veremos las típicas técnicas de siempre, añadiendo un port forwarding y para terminar una escalada con un python library hijacking. La máquina empezó siendo easy, pero parece que terminó siendo más medium...
+Este write-up fue escrito el 5 de julio, aunque fue modificado hasta su día de la salida (hoy). Esta es nuestra primera máquina creada para la comunidad. Es un homenaje a uno de los mejores videojuegos de puzles que se han creado, The Talos of Principle, que además cuenta con una historia impresionante y temas filosóficos. En ella veremos las típicas técnicas de siempre, añadiendo un port forwarding y para terminar una escalada con un python library hijacking. La máquina empezó siendo easy, pero parece que terminó siendo más medium...
 
 
 ## Reconocimiento de Puertos
