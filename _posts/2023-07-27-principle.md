@@ -15,6 +15,7 @@ tags:
   - Medium
   - Linux
   - Fuzzing
+  - Virtualhost
   - SSH
   - SUID
   - Sudo abuse
