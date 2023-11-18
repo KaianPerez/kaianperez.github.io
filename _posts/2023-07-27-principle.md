@@ -24,8 +24,11 @@ tags:
 
 ![](/assets/images/principle/prev.png){: .align-center}
 
-Este write-up fue escrito el 5 de julio, aunque fue modificado hasta su día de la salida (hoy). Esta es nuestra primera máquina creada para la comunidad. Es un homenaje a uno de los mejores videojuegos de puzles que se han creado, The Talos of Principle, que además cuenta con una historia impresionante y temas filosóficos. En ella veremos las típicas técnicas de siempre, añadiendo un port forwarding y para terminar una escalada con un python library hijacking. La máquina empezó siendo easy, pero parece que terminó siendo más medium...
+> DESCARGA: https://mega.nz/file/4EF20Y7Z#QsZZ4eHc2hjqVsgjSihg7mmMC_BqXWSfrVaGIpkQQz4
 
+> ACTUALIZACIÓN: La idea es que la máquina esté actualizada y el write-up también, por ello, se han corregido pequeños errores como el nombre de la flag, que se llame user.txt o el nombre del fichero de la diosa esté en inglés, entre otros detalles.
+
+Este write-up fue escrito el 5 de julio, aunque fue modificado hasta su día de la salida (hoy). Esta es nuestra primera máquina creada para la comunidad. Es un homenaje a uno de los mejores videojuegos de puzles que se han creado, The Talos of Principle, que además cuenta con una historia impresionante y temas filosóficos. En ella veremos las típicas técnicas de siempre, añadiendo un port forwarding y para terminar una escalada con un python library hijacking. La máquina empezó siendo easy, pero parece que terminó siendo más medium...
 
 ## Reconocimiento de Puertos
 
@@ -400,24 +403,22 @@ I left you a file with the name of one of the 12 Gods of Olympus, out of the eye
 The tool I left you is still your ally. Good luck to you.
 ~~~
 
-> Aquí cometí un error, ya que todas las pistas están en inglés, pero los Dioses los pensé en Español, por lo que se debe realizar la búsqueda del fichero en **español**.
-
 Siguiendo con el lore de la antigua Grecia nos habla de los 12 Dioses del Olimpo, por lo que realizando una búsqueda en Google podemos copiarlos directamente a un archivo de texto. De esta forma, crearemos un script que nos realice un find para cada línea del listado:
 
 ~~~
 bash-5.2$ cat dioses.txt 
 Zeus
 Hera
+Athena
+Apollo
 Poseidon
-Afrodita
 Ares
-Atenea
-Hermes
-Apolo
-Artemisa
-Hefesto
+Artemis
 Demeter
-Hestia
+Aphrodite
+Dionysos
+Hermes
+Hephaistos
 ~~~
 
 Aquí hago un inciso, y es que en forma de script no me dio funcionado, supongo que es por la pseudo-consola, así que lo realizaremos en un one liner (más rápido aún):
@@ -428,7 +429,7 @@ bash-5.2$ cat resultados.txt
     14321     20 -rw-r--r--   1 root     root        18195 May  8 16:16 /usr/lib/modules/6.1.0-9-amd64/kernel/drivers/power/supply/cros_peripheral_charger.ko
      4312      4 -rw-r--r--   1 root     root          164 May 28 15:54 /usr/share/zoneinfo/Antarctica/Rothera
      6909      4 -rw-r--r--   1 root     root          698 May 28 15:54 /usr/share/zoneinfo/right/Antarctica/Rothera
-    32381      4 -rwxr--r--   1 root     root          237 Jul  5 05:43 /etc/selinux/Afrodita.key
+    32381      4 -rwxr--r--   1 root     root          237 Jul  5 05:43 /etc/selinux/Aphrodite.key
      4469      4 -rw-r--r--   1 root     root         2184 May 28 15:54 /usr/share/zoneinfo/Europe/Bucharest
      7661      4 -rw-r--r--   1 root     root         2318 May 28 15:54 /usr/share/zoneinfo/right/Europe/Bucharest
 ~~~
@@ -436,7 +437,7 @@ bash-5.2$ cat resultados.txt
 Pues ahí vemos un fichero creado por nuestro amigo talos con el nombre del Dios en cuestión, veamos su contenido:
 
 ~~~
-bash-5.2$ cat /etc/selinux/.Afrodita
+bash-5.2$ cat /etc/selinux/.Aphrodite
 Here is my password:
 Hax0rModeON
 
@@ -470,9 +471,9 @@ Hay que tener en cuenta que no tenemos permisos sobre ese fichero, de forma que 
 > También se puede copiar directamente al /dev/stdout para leer directamente los ficheros en consola.
 
 ~~~bash
-talos@principle:~$ touch flag.txt
-talos@principle:~$ sudo -u elohim cp /home/gehenna/flag.txt .
-talos@principle:~$ cat flag.txt 
+talos@principle:~$ touch user.txt
+talos@principle:~$ sudo -u elohim cp /home/gehenna/user.txt .
+talos@principle:~$ cat user.txt 
                            _
                           _)\.-.
          .-.__,___,_.-=-. )\`  a`\_
@@ -523,7 +524,7 @@ drwxr-xr-x 4 root   root   4096 Jul  4 06:11 ..
 -rw-r----- 1 elohim elohim    1 Jul  5 08:24 .bash_history
 -rw-r----- 1 elohim elohim  261 Jul  5 08:13 .bash_logout
 -rw-r----- 1 elohim elohim 3814 Jul  4 05:46 .bashrc
--rw-r----- 1 elohim elohim  777 Jul  4 06:26 flag.txt
+-rw-r----- 1 elohim elohim  777 Jul  4 06:26 user.txt
 drw-r----- 3 elohim elohim 4096 Jul  2 20:52 .local
 -rw-r----- 1 elohim elohim   11 Jul  6 11:01 .lock
 -rw-r----- 1 elohim elohim  840 Jul  2 20:22 .profile
@@ -551,7 +552,9 @@ bash: /usr/bin/ssh: Permission denied
 
 Esto no funciona, así que tenemos que realizar un remote port forwarding sin SSH.
 
-> Se podría también copiar el binario de ssh de nuestra máquina atacante.
+> Se podría copiar el binario de ssh de nuestra máquina atacante, como alternativa.
+
+> También podríamos copiar nuestra clave pública desde nuestra máquina atacante al authorized_keys.
 
 En este caso utilizaré chisel, que es lo que suelo usar en estos casos. Como ya tenemos su clave privada, copiamos su contenido y creamos un fichero con el mismo en nuestro equipo, sin olvidarse de darle los permisos adecuados con `chmod 600 id_rsa`.
 
