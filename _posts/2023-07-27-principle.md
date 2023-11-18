@@ -24,7 +24,7 @@ tags:
 
 ![](/assets/images/principle/prev.png){: .align-center}
 
-> DESCARGA: https://mega.nz/file/4EF20Y7Z#QsZZ4eHc2hjqVsgjSihg7mmMC_BqXWSfrVaGIpkQQz4
+> [DESCARGA](https://mega.nz/file/4EF20Y7Z#QsZZ4eHc2hjqVsgjSihg7mmMC_BqXWSfrVaGIpkQQz4)
 
 > ACTUALIZACIÓN: La idea es que la máquina esté actualizada y el write-up también, por ello, se han corregido pequeños errores como el nombre de la flag, que se llame user.txt o el nombre del fichero de la diosa esté en inglés, entre otros detalles.
 
