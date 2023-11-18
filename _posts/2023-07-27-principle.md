@@ -24,9 +24,8 @@ tags:
 
 ![](/assets/images/principle/prev.png){: .align-center}
 
-> [DESCARGA](https://mega.nz/file/4EF20Y7Z#QsZZ4eHc2hjqVsgjSihg7mmMC_BqXWSfrVaGIpkQQz4)
-
 > ACTUALIZACIÓN: La idea es que la máquina esté actualizada y el write-up también, por ello, se han corregido pequeños errores como el nombre de la flag, que se llame user.txt o el nombre del fichero de la diosa esté en inglés, entre otros detalles.
+> [DESCARGA](https://mega.nz/file/4EF20Y7Z#QsZZ4eHc2hjqVsgjSihg7mmMC_BqXWSfrVaGIpkQQz4)
 
 Este write-up fue escrito el 5 de julio, aunque fue modificado hasta su día de la salida (hoy). Esta es nuestra primera máquina creada para la comunidad. Es un homenaje a uno de los mejores videojuegos de puzles que se han creado, The Talos of Principle, que además cuenta con una historia impresionante y temas filosóficos. En ella veremos las típicas técnicas de siempre, añadiendo un port forwarding y para terminar una escalada con un python library hijacking. La máquina empezó siendo easy, pero parece que terminó siendo más medium...
 
