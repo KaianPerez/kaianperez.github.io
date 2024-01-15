@@ -93,7 +93,6 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 7.34 seconds
 
  [*] Escaneo completado, se ha generado el fichero InfoPuertos 
-
 ~~~
 
 Vamos en primer lugar a revisar el puerto 21, ya que tenemos acceso *anonymous*:
@@ -240,7 +239,7 @@ Parece que está en base64, vamos a decodificarlo:
 ❯ echo "VkdneGMwbHpWR2d6VURSelUzZFBja1JpYkdGak5Rbz0K" | base64 -d
 VGgxc0lzVGgzUDRzU3dPckRibGFjNQo=
 ❯ echo "VGgxc0lzVGgzUDRzU3dPckRibGFjNQo=" | base64 -d
-Th1sIsTh3P4sSwOrDblac5
+Th******************5
 ~~~
 
 Bien, parece que ya podemos pivotar al usuario *whiteshell*, de esta forma, ahora ya podemos revisar el directorio de *Gonzalo* porque teníamos permisos de grupo:
@@ -315,7 +314,7 @@ $2y$10$CqtC7h0oOG5sir4oUFxkGuKzS561UFos6F7hL31Waj/Y48ZlAbQF6
 ~~~
 
 
-### Creackeando hash
+### Crackeando hash
 
 Parece que hemos localizado un hash, vamos a tratar de crackearlo en la máquina atacante:
 
