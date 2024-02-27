@@ -86,6 +86,9 @@ Si revisamos el puerto 80:
 
 Nos indica que "midnight.coffee" está en construcción, así que vamos a añadir ese dominio al /etc/hosts: `echo "192.168.1.31 midnight.coffee" | sudo tee -a /etc/hosts`
 
+
+### Fuzzing
+
 Ahora vamos a realizar fuzzing:
 
 ~~~bash
